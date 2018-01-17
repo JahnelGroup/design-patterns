@@ -7,3 +7,6 @@ https://en.wikipedia.org/wiki/Design_Patterns
 
 All of the design patterns in this repository will be in Java.
 Each design pattern will have it's own Java application.
+
+The design patterns in this repository will be separated by type of design pattern.
+The 3 main design patterns types discussed in the book are Creational, Structural, and Behavioral.
