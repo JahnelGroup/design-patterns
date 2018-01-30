@@ -1,4 +1,4 @@
-# design-patterns
+# Design Patterns
 The goal of this repository is to give code examples of popular design patterns discussed in Design Patterns: Elements of Reusable Object-Oriented Software
 by Erich Gama, Richard Helm, Ralph Johnson, John Vlissides.
 Below is a link to the book's wiki page with more information about its content:
