@@ -1,0 +1,40 @@
+# README TODOs:
+- Improve root README
+  - Add more information
+  - Make it user friendly
+- Improve Creational README
+  - Add more information
+  - Make it user friendly
+- Improve Behavioral README
+  - Add more information
+  - Make it user friendly
+- Improve Structural README
+  - Add more information
+  - Make it user friendly
+- Improve README For Singleton design Pattern
+- Improve README for Abstract Factory Design Pattern
+# Design Pattern TODOs:
+- Implement Creational Design Patterns:
+  - Builder
+  - Factory Method
+  - Prototype
+- Implement Behavioral Design Patterns:
+  - Chain of Responsibility
+  - Command
+  - Interpreter
+  - Iterator
+  - Mediator
+  - Memento
+  - Observer
+  - State
+  - Strategy
+  - Template Method
+  - Visitor
+- Implement Structural Design Patterns:
+  - Adapter
+  - Bridge
+  - Composite
+  - Decorator
+  - Facade
+  - Flyweight
+  - Proxy
