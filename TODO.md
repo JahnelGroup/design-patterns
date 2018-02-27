@@ -11,11 +11,11 @@
 - Improve Structural README
   - Add more information
   - Make it user friendly
-- Improve README For Singleton design Pattern
+- Improve README For Singleton Design Pattern
 - Improve README for Abstract Factory Design Pattern
+- Improve README for Builder Design Pattern
 # Design Pattern TODOs:
 - Implement Creational Design Patterns:
-  - Builder
   - Factory Method
   - Prototype
 - Implement Behavioral Design Patterns:
