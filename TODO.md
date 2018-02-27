@@ -14,9 +14,9 @@
 - Improve README For Singleton Design Pattern
 - Improve README for Abstract Factory Design Pattern
 - Improve README for Builder Design Pattern
+- Improve README for Factory Method Design Pattern
 # Design Pattern TODOs:
 - Implement Creational Design Patterns:
-  - Factory Method
   - Prototype
 - Implement Behavioral Design Patterns:
   - Chain of Responsibility
