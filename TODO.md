@@ -15,9 +15,8 @@
 - Improve README for Abstract Factory Design Pattern
 - Improve README for Builder Design Pattern
 - Improve README for Factory Method Design Pattern
+- Improve README for Prototype Design Pattern
 # Design Pattern TODOs:
-- Implement Creational Design Patterns:
-  - Prototype
 - Implement Behavioral Design Patterns:
   - Chain of Responsibility
   - Command
