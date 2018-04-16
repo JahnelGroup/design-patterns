@@ -24,20 +24,29 @@ public abstract class FootWear implements Cloneable {
         return this.seasonToWear;
     }
     
+    public String getColor() {
+        return this.color;
+    }
+    
     /*
      * In the clone method, we are cloning the super class and returning it back.
      * This is the code is crucial for the Prototype Design Pattern
-     * (non-Javadoc)
-     * @see java.lang.Object#clone()
+     * 
      */
     public FootWear clone() {
-        FootWear clone = null;
-        
-        try {
-            clone = (FootWear) super.clone();
-        } catch(CloneNotSupportedException ex) {
+        String className = getClass().getSimpleName();
+        if(className.equals(Boots.class.getSimpleName())) {
+            return new Boots(getId(), getColor());
+        }
+        else if(className.equals(Sneakers.class.getSimpleName())) {
+            return new Sneakers(getId(), getColor());
+        }
+        else if(className.equals(FlipFlops.class.getSimpleName())) {
+            return new FlipFlops(getId(), getColor());
+        }
+        else {
             throw new RuntimeException("Footwear does not exist.");
         }
-        return clone;
     }
+    
 }
