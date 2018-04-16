@@ -36,7 +36,7 @@ public abstract class FootWear implements Cloneable {
         try {
             clone = (FootWear) super.clone();
         } catch(CloneNotSupportedException ex) {
-            ex.printStackTrace();
+            throw new RuntimeException("Footwear does not exist.");
         }
         return clone;
     }
