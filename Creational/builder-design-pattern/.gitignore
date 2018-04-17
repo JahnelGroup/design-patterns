@@ -1,2 +1,8 @@
 /.gradle/
 /bin/
+/.idea/
+/out/
+.idea/
+**/out
+*.iml
+
