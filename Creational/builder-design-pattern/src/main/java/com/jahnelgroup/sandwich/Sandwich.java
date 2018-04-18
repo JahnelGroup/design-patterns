@@ -1,51 +1,28 @@
 package com.jahnelgroup.sandwich;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Sandwich implements SandwichPlan {
 
-    private String bread;
-    private String meat;
-    private String vegetable;
-    private String condiment;
-    
-    @Override
-    public void setBread(String bread) {
-        this.bread = bread; 
-    }
-
-    @Override
-    public void setMeat(String meat) {
-        this.meat = meat;
-    }
-
-    @Override
-    public void setVegetable(String vegetable) {
-        this.vegetable = vegetable;
-    }
-
-    @Override
-    public void setCondiment(String condiment) {
-        this.condiment = condiment;
-    }
-    
     /*
-     * The Getter methods below are being used for testing. This is not necessary for the Builder Design Pattern
-     * 
+        List of ingredients that make the sandwich.
      */
+    private List<Ingredient> ingredients = new ArrayList<>();
 
-    public String getBread() {
-        return this.bread;
+    /*
+        Add ingredient to Sandwich's ingredient list.
+     */
+    @Override
+    public void addLayer(Ingredient ingredient) {
+        ingredients.add(ingredient);
     }
-    
-    public String getMeat() {
-        return this.meat;
-    }
-    
-    public String getVegetable() {
-        return this.vegetable;
-    }
-    
-    public String getCondiment() {
-        return this.condiment;
+
+    /*
+        Method is used for testing purposes.
+     */
+    public List<Ingredient> getSandwichIngredients(){
+        return this.ingredients;
     }
 
 }

@@ -1,6 +1,8 @@
 package com.jahnelgroup.employee;
 
+import com.jahnelgroup.customer.Customer;
 import com.jahnelgroup.sandwich.Sandwich;
+import com.jahnelgroup.sandwichbuilder.PrepStation;
 import com.jahnelgroup.sandwichbuilder.SandwichBuilder;
 
 /*
@@ -14,29 +16,29 @@ public class Employee {
      * Builder Employee will use to make a sandwich
      * 
      */
-    private SandwichBuilder builder;
+    private SandwichBuilder builder = new PrepStation();
+    private String name;
     
-    public Employee(SandwichBuilder builder) {
-        this.builder = builder;
+    public Employee(String name) {
+        this.name = name;
     }
     
     /*
      * This is the construct method that creates the sandwich using the methods provided by the builder interface.
-     * 
+     * Sandwich will be returned after created
      */
-    public void makeSandwich() { 
-        this.builder.addBread();
-        this.builder.addMeat();
-        this.builder.addVegetable();
-        this.builder.addCondiment();
-    }
-    
-    /*
-     * Get the final created Product from the builder.
-     * 
-     */
-    public Sandwich getSandwich() {
-        return this.builder.getSandwich();
+    public Sandwich makeOrder(Customer cust) {
+        cust.getIngredients()
+                .stream()
+                .forEach(i -> {
+                    switch(i.getType()){
+                        case "B": builder.bread(i);  break;
+                        case "M": builder.meat(i);   break;
+                        case "V": builder.veg(i);    break;
+                        case "C": builder.cond(i);   break;
+                    }
+                });
+        return builder.build();
     }
     
 }

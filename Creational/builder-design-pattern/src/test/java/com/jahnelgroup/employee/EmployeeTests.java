@@ -1,38 +1,72 @@
 package com.jahnelgroup.employee;
 
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
-
+import com.jahnelgroup.customer.Customer;
+import com.jahnelgroup.sandwich.Ingredient;
 import com.jahnelgroup.sandwich.Sandwich;
-import com.jahnelgroup.sandwichbuilder.BLTBuilder;
-import com.jahnelgroup.sandwichbuilder.BurgerBuilder;
+import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 public class EmployeeTests {
 
     /*
-     * Test that the correct sandwiches are being created based on what builder the director(Employee) is given.
+     * Test that the correct sandwiches are being created based on what ingredients the director(Employee) is given.
      * 
      */
+
     @Test
-    public void shouldReturnABurgerWhenEmployeeIsGivenABurgerBuilder() {
-        Employee e = new Employee(new BurgerBuilder());
-        e.makeSandwich();
-        wasCorrectSandwichCreated(e.getSandwich(), "Bun", "Beef", "Lettuce", "Ketchup");
+    public void shouldCreateSandwichCorrectly() {
+        Employee e = new Employee("Victor");
+        Customer c = new Customer(new Ingredient("B", "seed"),
+                                    new Ingredient("M", "ham"),
+                                    new Ingredient("M", "turkey"),
+                                    new Ingredient("V", "lettuce"),
+                                    new Ingredient("C", "mustard"));
+        Sandwich s = e.makeOrder(c);
+        assertThat(s.getSandwichIngredients())
+                .usingElementComparatorOnFields("type", "val")
+                .containsExactly(
+                        new Ingredient("B", "seed"),
+                        new Ingredient("M", "ham"),
+                        new Ingredient("M", "turkey"),
+                        new Ingredient("V", "lettuce"),
+                        new Ingredient("C", "mustard"),
+                        new Ingredient("B", "seed"));
     }
-    
+
     @Test
-    public void shouldReturnABLTWhenEmployeeIsGivenABLTBuilder() {
-        Employee e = new Employee(new BLTBuilder());
-        e.makeSandwich();
-        wasCorrectSandwichCreated(e.getSandwich(), "White Bread", "Bacon.", "Lettuce & Tomato", "Mayonaise");
+    public void shouldCreateSandwichWithoutMeat() {
+        Employee e = new Employee("Victor");
+        Customer c = new Customer(
+                new Ingredient("B", "seed"),
+                new Ingredient("V", "tomato"),
+                new Ingredient("V", "lettuce"),
+                new Ingredient("C", "mustard"));
+        Sandwich s = e.makeOrder(c);
+        assertThat(s.getSandwichIngredients())
+                .usingElementComparatorOnFields("type", "val")
+                .containsExactly(
+                        new Ingredient("B", "seed"),
+                        new Ingredient("V", "tomato"),
+                        new Ingredient("V", "lettuce"),
+                        new Ingredient("C", "mustard"),
+                        new Ingredient("B", "seed"));
     }
-    
-    private void wasCorrectSandwichCreated(Sandwich sandwich, String bread, String meat, String vegetable, String condiment) {
-        assertTrue(sandwich.getBread().equals(bread));
-        assertTrue(sandwich.getMeat().equals(meat));
-        assertTrue(sandwich.getVegetable().equals(vegetable));
-        assertTrue(sandwich.getCondiment().equals(condiment));
+
+    @Test
+    public void shouldCreateSandwichWithoutBread(){
+        Employee e = new Employee("Victor");
+        Customer c = new Customer(
+                new Ingredient("V", "tomato"),
+                new Ingredient("V", "lettuce"),
+                new Ingredient("C", "mustard"));
+        Sandwich s = e.makeOrder(c);
+        assertThat(s.getSandwichIngredients())
+                .usingElementComparatorOnFields("type", "val")
+                .containsExactly(
+                        new Ingredient("V", "tomato"),
+                        new Ingredient("V", "lettuce"),
+                        new Ingredient("C", "mustard"));
     }
 
 }

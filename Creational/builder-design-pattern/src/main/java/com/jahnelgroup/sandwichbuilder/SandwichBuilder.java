@@ -1,5 +1,6 @@
 package com.jahnelgroup.sandwichbuilder;
 
+import com.jahnelgroup.sandwich.Ingredient;
 import com.jahnelgroup.sandwich.Sandwich;
 
 /*
@@ -8,14 +9,14 @@ import com.jahnelgroup.sandwich.Sandwich;
  */
 public interface SandwichBuilder {
 
-    public void addBread();
+    SandwichBuilder bread(Ingredient bread);
     
-    public void addMeat();
+    SandwichBuilder meat(Ingredient meat);
     
-    public void addVegetable();
+    SandwichBuilder veg(Ingredient veg);
     
-    public void addCondiment();
+    SandwichBuilder cond(Ingredient cond);
     
-    public Sandwich getSandwich();
+    Sandwich build();
     
 }
