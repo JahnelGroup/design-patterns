@@ -5,4 +5,7 @@
 .idea/
 **/out
 *.iml
-
+*.classpath
+/target/
+/build/
+.project

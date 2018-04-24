@@ -1,5 +1,11 @@
-/.gradle/
 /.project
 /.settings/
 npm-debug.log
 .project
+/.gradle/
+/bin/
+/.idea/
+/out/
+.idea/
+**/out
+*.iml
