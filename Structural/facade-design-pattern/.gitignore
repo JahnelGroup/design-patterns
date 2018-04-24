@@ -10,3 +10,6 @@
 *.iml
 *.classpath
 /.settings/
+/bin
+/.project
+npm-debug.log
