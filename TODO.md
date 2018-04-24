@@ -25,6 +25,5 @@
   - Adapter
   - Bridge
   - Composite
-  - Facade
   - Flyweight
   - Proxy
